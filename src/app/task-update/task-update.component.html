@@ -1,0 +1,19 @@
+<form id="formnewtask" name="formtask" #formtask="ngForm" >
+
+  <label>
+    Title:
+  </label>
+<input type="text" name="title" id="title"  [(ngModel)]="title">
+
+<label>
+  Description:
+</label>
+<input type="text" name="description" id="description" [(ngModel)]="description">
+<div>Userid:
+<input type="text" name="userId" placeholder="userId" [(ngModel)]="userId">
+</div>
+<div>
+<input type="checkbox" name="isDone" [(ngModel)]="isDone">
+</div>
+<button type="button" (click)="saveTask()">Save task</button>
+</form>

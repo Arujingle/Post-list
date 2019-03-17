@@ -1,0 +1,23 @@
+
+.navigation{
+display:flex;
+flex-flow:row wrap;
+justify-content:flex-end;
+list-style:none;
+background-color:blueviolet;
+padding:20px;
+}
+
+li a{
+  color:white;
+  padding:20px;
+}
+
+@media all and (max-width:800px){
+  .navigation{
+  justify-content:space-around ;
+}}
+@media all and (max-width:500px){
+  .navigation{
+  flex-direction:column ;
+}}

@@ -1,0 +1,36 @@
+<div class="content">
+  <a [routerLink]="'/detail'">Create</a>
+  <a [routerLink]="'/update'">Update</a>
+  <form>
+<div>
+  <input type="text"  name="filter" placeholder="Search">
+</div>
+<!-- <button type="button" (click)="updateFilter()">Filter</button> -->
+
+
+
+  </form>
+<table style="border:solid black">
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>userId</th>
+    <th>isDone</th>
+    <th>Delete</th>
+
+  </tr>
+  <tr *ngFor="let task of tasks">
+    <td>{{task.id}}</td>
+    <td><a [routerLink]="['/update', task.id]" [ngClass]= " {titlecolor:true}"
+
+      >{{task.title | postPrefix : task.isDone}}</a></td>
+    <td><a [routerLink]="['/info',task.id]">{{task.userId}} </a></td>
+    <td> <input [checked]="task.isDone" id = "checker" checked="checked" type="checkbox">{{task.isDone |postPrefix: task.isDone}}</td>
+    <td><button type="button" (click)="deleteTask(task.id)">Delete</button></td>
+
+  </tr>
+</table>
+<button type="button" (click)="filterTask()"> Filter </button>
+
+</div>
+
